@@ -13,6 +13,7 @@ import {
 } from '../js/sources/PatientMedication';
 // import { BGLGetResource, saveNewBGLRanges } from '../js/sources/PatientBGLRangesSource';
 import { GetMedications, BGLGetResource, GetSingleReport } from './services/index';
+import initialState from '../js/initial-state';
 import MedicationData from './MedicationData/MedicationData';
 import BGLPlanComponent from './PatientDashboard/BGLPlan/BGLPlanComponent';
 // import '../cs/bootstrap.css';
@@ -58,6 +59,7 @@ class MedicationReport extends Component {
     constructor(props) {
         super(props);
         this.state = {
+            ...initialState,
             loggedInUserId:
                 this.props &&
                     this.props.location &&
@@ -65,42 +67,6 @@ class MedicationReport extends Component {
                     this.props.location.state.loggedInUserId
                     ? this.props.location.state.loggedInUserId
                     : '',
-            note: '',
-            note1: '',
-            displayNotes: [],
-            showMyNote: false,
-            sendNoteButtonClicked: false,
-            activeTab: 1,
-            activeTab1: 1,
-            value: 'DOCTOR',
-            reportExists: false,
-            assignedToName: '',
-            assignedToTypeId: '',
-            assignedToRole: '',
-            createByName: '',
-            createdByRole: '',
-            timeOfReportCreation: '',
-            responseData: [],
-            reportData: [],
-            from: '',
-            modal: false,
-            backdrop: 'static',
-            showWarningMessage: false,
-            patientRanges: [],
-            isSenderChange: false,
-            reportLocked: false,
-            canEditReport: true,
-            snapshotReport: false,
-            editButtonClicked: false,
-            doctorApprovedOrRejected: false,
-            showPrompt: false,
-            isSuggestedMedicationUpdated: false,
-            isSuggestedMonitoringUpdated: false,
-            updatedBGLRanges: [],
-            showApprovePopup: false,
-            showWarningMessageOnCancel: false,
-            showCreatePopup: false,
-            isSendLoading: false,
         };
     }
 
